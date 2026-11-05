@@ -6,15 +6,19 @@ import main.Main;
 
 public class MenuPanel extends JPanel {
 
+    private final Image fond = new ImageIcon("resources/background1.jpg").getImage();
+
     public MenuPanel(Main window) {
         setLayout(new GridBagLayout());
-        setBackground(new Color(30, 30, 40));
 
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.fill = GridBagConstraints.HORIZONTAL;
 
-        JLabel titre = new JLabel("HNEFATAFL", SwingConstants.CENTER);
+        //JLabel titre = new JLabel("HNEFATAFL", SwingConstants.CENTER);
+        Image img = new ImageIcon("resources/ragnarok.png").getImage()
+                .getScaledInstance(600, -1, Image.SCALE_SMOOTH);
+        JLabel titre = new JLabel(new ImageIcon(img), SwingConstants.CENTER);
         titre.setFont(new Font("Serif", Font.BOLD, 64));
         titre.setForeground(Color.WHITE);
         c.insets = new Insets(0, 0, 50, 0);
@@ -25,6 +29,12 @@ public class MenuPanel extends JPanel {
         add(bouton("Tutoriel", () -> window.showScreen("tuto")), c);
         add(bouton("Règles", () -> window.showScreen("regles")), c);
         add(bouton("Quitter", () -> System.exit(0)), c);
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(fond, 0, 0, getWidth(), getHeight(), this);
     }
 
     private JButton bouton(String texte, Runnable action) {
