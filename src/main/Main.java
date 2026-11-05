@@ -2,8 +2,6 @@ package main;
 
 import javax.swing.*;
 
-import java.awt.*;
-
 
 /*
 import java.awt.event.ActionEvent;
@@ -22,7 +20,7 @@ public class Main extends JFrame{
         
         JFrame fenetre  = new JFrame("Hnefatafl");
         
-        fenetre.setSize(1900, 1080);
+        fenetre.setSize(1920, 1080);
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         BG_Board bg = new BG_Board();
