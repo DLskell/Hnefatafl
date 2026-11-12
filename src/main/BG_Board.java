@@ -18,8 +18,8 @@ public class BG_Board {
     
     private final Image bgimage      = load("background1.jpg");
     private final Image boardImage   = load("pixil-frame-0.png");
-    private final Image attackerImg  = load("jeton-noir.png");
-    private final Image defenderImg  = load("jeton_blanc.png");
+    private final Image attackerImg  = load("jeton_blanc.png");
+    private final Image defenderImg  = load("jeton-noir.png");
     private final Image kingImg      = load("roi.png");
 
     
@@ -129,8 +129,8 @@ public class BG_Board {
         String text = switch (board.getResult()) {
             case ATTACKERS_WIN -> "Victoire des attaquants !  (R = rejouer)";
             case DEFENDERS_WIN -> "Victoire des défenseurs !  (R = rejouer)";
-            default -> board.isAttackersTurn() ? "Tour des attaquants (noirs)"
-                                               : "Tour des défenseurs (blancs)";
+            default -> board.isAttackersTurn() ? "Tour des attaquants (blancs)"
+                                               : "Tour des défenseurs (noirs)";
         };
         g2.setFont(new Font("SansSerif", Font.BOLD, 28));
         FontMetrics fm = g2.getFontMetrics();
